@@ -81,6 +81,7 @@ func (s *Server) MapHandlers(ctx context.Context, app *fiber.App, logger *zap.Su
 	// -------------------------------------------------------------------------------------
 
 	go func(ctx context.Context) {
+		time.Sleep(3 * time.Second)
 		for {
 			select {
 			case <-ctx.Done():
@@ -107,6 +108,7 @@ func (s *Server) MapHandlers(ctx context.Context, app *fiber.App, logger *zap.Su
 	// -------------------------------------------------------------------------------------
 
 	go func(ctx context.Context) {
+		time.Sleep(3 * time.Second)
 		for {
 			select {
 			case <-ctx.Done():
@@ -137,7 +139,7 @@ func (s *Server) MapHandlers(ctx context.Context, app *fiber.App, logger *zap.Su
 		for {
 			select {
 			case <-ctx.Done():
-				cancel()
+				return
 			default:
 				orderUC.LoadCache()
 				time.Sleep(cconstants.GoRoutineSleepSeconds * time.Second)

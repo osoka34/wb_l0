@@ -65,7 +65,7 @@ func (p *postgresRepository) Select(params *models.SelectParams) (*[]models.Item
 	return &items, nil
 }
 
-func (p *postgresRepository) SelectAll(params *models.SelectParams) (*[]models.ItemModel, error) {
+func (p *postgresRepository) SelectAll() (*[]models.ItemModel, error) {
 	var (
 		items []models.ItemModel
 		query = `

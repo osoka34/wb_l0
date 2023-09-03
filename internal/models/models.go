@@ -72,6 +72,6 @@ type GetParams struct {
 type Response struct {
 	Data        interface{} `json:"data,omitempty"`
 	ErrCode     int         `json:"err_code"`
-	Description string      `json:"description"`
+	Description string      `json:"description,omitempty"`
 	Success     bool        `json:"success"`
 }
