@@ -1,0 +1,29 @@
+logger:
+  level: "debug"
+  inFile: "./logs/app.log"
+  development: false
+  disableCaller: false
+  disableStacktrace: true
+  encoding: "json"
+
+
+Postgres:
+  host: "127.0.0.1"
+  port: "5588"
+  user: "wb_admin"
+  password: "postgres"
+  DBName: "postgres"
+  pgDriver: "pgx"
+
+
+Server:
+  AppVersion: "1.0.0"
+  Host: "0.0.0.0"
+  Port: "11000"
+
+Nats:
+  host: "localhost"
+  port: "4222"
+  cluster: "test-cluster"
+  client: "test-client"
+  topic: "test-topic"
