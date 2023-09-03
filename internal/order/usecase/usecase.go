@@ -125,7 +125,7 @@ func (o *OrderUsecase) LoadCache() {
 				return
 			}
 			ordr.Delivery = delivery
-			items, err := o.itemRepo.SelectAll(&models.SelectParams{
+			items, err := o.itemRepo.Select(&models.SelectParams{
 				ordr.OrderUid,
 			})
 			if err != nil {
