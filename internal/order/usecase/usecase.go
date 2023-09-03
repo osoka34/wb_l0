@@ -5,7 +5,6 @@ import (
 	"go.uber.org/zap"
 	"sync"
 	"sync/atomic"
-	"time"
 	"wb_l0/config"
 	"wb_l0/internal/cconstants"
 	"wb_l0/internal/delivery"
@@ -49,7 +48,6 @@ func (o *OrderUsecase) CreateOrder(params *models.OrderModel) (models.Response, 
 		response.ErrCode = cconstants.CantInsertOrder
 		return response, err
 	}
-	time.Sleep(1 * time.Second)
 	err = o.paymentRepo.Insert(&models.InsertParams{
 		SqlValues: utils.StructToSqlArray(*(params.Payment)),
 	})
